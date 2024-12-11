@@ -2220,6 +2220,12 @@
     ! units: W m-2
     ! cell_methods: xh:mean yh:mean zl:mean area:mean
     ! variants: {Kd_Work,Kd_Work_xyave}
+"Kd_Work_added"  [Unused]
+    ! modules: {ocean_model,ocean_model_z,ocean_model_d2,ocean_model_z_d2}
+    ! long_name: Work done by additional mixing Kd_add
+    ! units: W m-2
+    ! cell_methods: xh:mean yh:mean zl:mean area:mean
+    ! variants: {Kd_Work_added,Kd_Work_added_xyave}
 "maxTKE"  [Unused]
     ! modules: {ocean_model,ocean_model_z,ocean_model_d2,ocean_model_z_d2}
     ! long_name: Maximum layer TKE
