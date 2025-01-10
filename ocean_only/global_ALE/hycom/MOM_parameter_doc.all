@@ -2423,31 +2423,60 @@ LONGWAVE_FILE = "ocean_forcing_daily.nc" !
                                 ! LONGWAVE_FORCING_VAR.
 LONGWAVE_FORCING_VAR = "LW"     ! default = "LW"
                                 ! The variable with the longwave forcing field.
+LONGWAVE_FILE_DAYS_PER_RECORD = 0 ! default = 0
+                                ! If positive the number of days of longwave fluxes per time level in
+                                ! LONGWAVE_FILE, or if negative the number of time levels per day.  If 31 change
+                                ! forcing monthly, or if 0 the model will guess the right value based on the
+                                ! file size.
 SHORTWAVE_FILE = "ocean_forcing_daily.nc" !
                                 ! The file with the shortwave heat flux, in the variable given by
                                 ! SHORTWAVE_FORCING_VAR.
 SHORTWAVE_FORCING_VAR = "SW"    ! default = "SW"
                                 ! The variable with the shortwave forcing field.
+SHORTWAVE_FILE_DAYS_PER_RECORD = 0 ! default = 0
+                                ! If positive the number of days of shortwave fluxes per time level in
+                                ! SHORTWAVE_FILE, or if negative the number of time levels per day.  If 31
+                                ! change forcing monthly, or if 0 the model will guess the right value based on
+                                ! the file size.
 EVAPORATION_FILE = "ocean_forcing_daily.nc" !
                                 ! The file with the evaporative moisture flux, in the variable given by
                                 ! EVAP_FORCING_VAR.
 EVAP_FORCING_VAR = "evap"       ! default = "evap"
                                 ! The variable with the evaporative moisture flux.
+EVAPORATION_FILE_DAYS_PER_RECORD = 0 ! default = 0
+                                ! If positive the number of days of evaporation per time level in
+                                ! EVAPORATION_FILE, or if negative the number of time levels per day.  If 31
+                                ! change forcing monthly, or if 0 the model will guess the right value based on
+                                ! the file size.
 LATENTHEAT_FILE = "ocean_forcing_daily.nc" !
                                 ! The file with the latent heat flux, in the variable given by
                                 ! LATENT_FORCING_VAR.
 LATENT_FORCING_VAR = "latent"   ! default = "latent"
                                 ! The variable with the latent heat flux.
+LATENTHEAT_FILE_DAYS_PER_RECORD = 0 ! default = 0
+                                ! If positive the number of days of latent heat fluxes per time level in
+                                ! LATENTHEAT_FILE, or if negative the number of time levels per day.  If 31
+                                ! change forcing monthly, or if 0 the model will guess the right value based on
+                                ! the file size.
 SENSIBLEHEAT_FILE = "ocean_forcing_daily.nc" !
                                 ! The file with the sensible heat flux, in the variable given by
                                 ! SENSIBLE_FORCING_VAR.
 SENSIBLE_FORCING_VAR = "sensible" ! default = "sensible"
                                 ! The variable with the sensible heat flux.
+SENSIBLEHEAT_FILE_DAYS_PER_RECORD = 0 ! default = 0
+                                ! If positive the number of days of sensible heat fluxes per time level in
+                                ! SENSIBLEHEAT_FILE, or if negative the number of time levels per day.  If 31
+                                ! change forcing monthly, or if 0 the model will guess the right value based on
+                                ! the file size.
 RAIN_FILE = "ocean_precip_monthly.nc" !
                                 ! The file with the liquid precipitation flux, in the variable given by
                                 ! RAIN_FORCING_VAR.
 RAIN_FORCING_VAR = "liq_precip" ! default = "liq_precip"
                                 ! The variable with the liquid precipitation flux.
+RAIN_FILE_DAYS_PER_RECORD = 0   ! default = 0
+                                ! If positive the number of days of rain fluxes per time level in RAIN_FILE, or
+                                ! if negative the number of time levels per day.  If 31 change forcing monthly,
+                                ! or if 0 the model will guess the right value based on the file size.
 SNOW_FILE = "ocean_precip_monthly.nc" !
                                 ! The file with the frozen precipitation flux, in the variable given by
                                 ! SNOW_FORCING_VAR.
@@ -2460,6 +2489,10 @@ LIQ_RUNOFF_FORCING_VAR = "liq_runoff" ! default = "liq_runoff"
                                 ! The variable with the liquid runoff flux.
 FROZ_RUNOFF_FORCING_VAR = "froz_runoff" ! default = "froz_runoff"
                                 ! The variable with the frozen runoff flux.
+RUNOFF_FILE_DAYS_PER_RECORD = 0 ! default = 0
+                                ! If positive the number of days of runoff per time level in RUNOFF_FILE, or if
+                                ! negative the number of time levels per day.  If 31 change forcing monthly, or
+                                ! if 0 the model will guess the right value based on the file size.
 SSTRESTORE_FILE = "ocean_forcing_daily.nc" !
                                 ! The file with the SST toward which to restore in the variable given by
                                 ! SST_RESTORE_VAR.
@@ -2468,8 +2501,17 @@ SALINITYRESTORE_FILE = "ocean_forcing_daily.nc" !
                                 ! given by SSS_RESTORE_VAR.
 SST_RESTORE_VAR = "SST"         ! default = "SST"
                                 ! The variable with the SST toward which to restore.
+SSTRESTORE_FILE_DAYS_PER_RECORD = 0 ! default = 0
+                                ! If positive the number of days of SST per time level in SSTRESTORE_FILE, or if
+                                ! negative the number of time levels per day.  If 31 change forcing monthly, or
+                                ! if 0 the model will guess the right value based on the file size.
 SSS_RESTORE_VAR = "SSS"         ! default = "SSS"
                                 ! The variable with the SSS toward which to restore.
+SALINITYRESTORE_FILE_DAYS_PER_RECORD = 0 ! default = 0
+                                ! If positive the number of days of salinity per time level in
+                                ! SALINITYRESTORE_FILE, or if negative the number of time levels per day.  If 31
+                                ! change forcing monthly, or if 0 the model will guess the right value based on
+                                ! the file size.
 WIND_CONFIG = "file"            ! default = "zero"
                                 ! The character string that indicates how wind forcing is specified.  Valid
                                 ! options include (file), (data_override), (2gyre), (1gyre), (gyres), (zero),
@@ -2489,6 +2531,10 @@ WINDSTRESS_SCALE = 1.0          !   [nondim] default = 1.0
 USTAR_FORCING_VAR = ""          ! default = ""
                                 ! The name of the friction velocity variable in WIND_FILE or blank to get ustar
                                 ! from the wind stresses plus the gustiness.
+WIND_FILE_DAYS_PER_RECORD = 0   ! default = 0
+                                ! If positive the number of days of wind stress per time level in WIND_FILE, or
+                                ! if negative the number of time levels per day.  If 31 change forcing monthly,
+                                ! or if 0 the model will guess the right value based on the file size.
 RESTOREBUOY = True              !   [Boolean] default = False
                                 ! If true, the buoyancy fluxes drive the model back toward some specified
                                 ! surface state with a rate given by FLUXCONST.
