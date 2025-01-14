@@ -988,6 +988,10 @@ PV_ADV_SCHEME = "PV_ADV_CENTERED" ! default = "PV_ADV_CENTERED"
                                 !    PV_ADV_UPWIND1  - upwind, first order
 
 ! === module MOM_self_attr_load ===
+SAL_USE_BPA = False             !   [Boolean] default = False
+                                ! If true, use bottom pressure anomaly to calculate self-attraction and loading
+                                ! (SAL). Otherwise sea surface height anomaly is used, which is only correct for
+                                ! homogenous flow.
 SAL_SCALAR_APPROX = True        !   [Boolean] default = True
                                 ! If true, use the scalar approximation to calculate self-attraction and
                                 ! loading.
@@ -1083,9 +1087,11 @@ RHO_PGF_REF = 1024.0            !   [kg m-3] default = 1024.0
                                 ! non-Boussinesq mode.  The default is RHO_0.
 TIDES_ANSWER_DATE = 20230630    ! default = 20230630
                                 ! The vintage of self-attraction and loading (SAL) and tidal forcing
-                                ! calculations in Boussinesq mode. Values below 20230701 recover the old answers
-                                ! in which the SAL is part of the tidal forcing calculation.  The change is due
-                                ! to a reordered summation and the difference is only at bit level.
+                                ! calculations.  Setting dates before 20230701 recovers old answers (Boussinesq
+                                ! and non-Boussinesq modes) when SAL is part of the tidal forcing calculation.
+                                ! The answer difference is only at bit level and due to a reordered summation.
+                                ! Setting dates before 20250201 recovers answers (Boussinesq mode) that
+                                ! interface heights are modified before pressure force integrals are calculated.
 MASS_WEIGHT_IN_PRESSURE_GRADIENT = False !   [Boolean] default = False
                                 ! If true, use mass weighting when interpolating T/S for integrals near the
                                 ! bathymetry in FV pressure gradient calculations.
