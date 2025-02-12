@@ -440,6 +440,10 @@ VELOCITY_CONFIG = "phillips"    ! default = "zero"
                                 !     USER - call a user modified routine.
 VELOCITY_IC_PERTURB_AMP = 0.001 !   [m s-1] default = 0.001
                                 ! The magnitude of the initial velocity perturbation.
+PHILLIPS_ANSWER_DATE = 20241201 ! default = 20241201
+                                ! The vintage of the expressions in the Phillips_initialization code.  Values
+                                ! below 20250101 recover the answers from the end of 2018, while higher values
+                                ! use mathematically equivalent expressions that are fully rescalable.
 ODA_INCUPD = False              !   [Boolean] default = False
                                 ! If true, oda incremental updates will be applied everywhere in the domain.
 SPONGE = True                   !   [Boolean] default = False
