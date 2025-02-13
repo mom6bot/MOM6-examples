@@ -795,6 +795,8 @@ BEGW = 0.0                      !   [nondim] default = 0.0
                                 ! which the treatment of gravity waves is forward-backward (0) or simulated
                                 ! backward Euler (1).  0 is almost always used. If SPLIT is false and USE_RK2 is
                                 ! true, BEGW can be between 0 and 0.5 to damp gravity waves.
+SET_DTBT_USE_BT_CONT = False    !   [Boolean] default = False
+                                ! If true, use BT_CONT to calculate DTBT if possible.
 SPLIT_BOTTOM_STRESS = False     !   [Boolean] default = False
                                 ! If true, provide the bottom stress calculated by the vertical viscosity to the
                                 ! barotropic solver.
