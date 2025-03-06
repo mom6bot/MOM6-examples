@@ -1719,6 +1719,12 @@ VERTEX_SHEAR = True             !   [Boolean] default = False
 VERTEX_SHEAR_VISCOSITY_BUG = True !   [Boolean] default = True
                                 ! If true, use a bug in vertex shear that zeros out viscosities at vertices on
                                 ! coastlines.
+VERTEX_SHEAR_GEOMETRIC_MEAN = False !   [Boolean] default = False
+                                ! If true, use a geometric mean for moving diffusivity from vertices to tracer
+                                ! points.  False uses algebraic mean.
+VERTEX_SHEAR_THICKNESS_MEAN = False !   [Boolean] default = False
+                                ! If true, apply thickness weighting to horizontal averagings of diffusivity to
+                                ! tracer points in the kappa shear solver.
 RINO_CRIT = 0.25                !   [nondim] default = 0.25
                                 ! The critical Richardson number for shear mixing.
 SHEARMIX_RATE = 0.089           !   [nondim] default = 0.089
